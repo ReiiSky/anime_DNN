@@ -29,7 +29,7 @@ file_list = ["./picture/gochiusa_01/",
              "./picture/hataraku_saibou08/",
              "./picture/planet_with08/",
              "./picture/revu_star07/"]
-savefile = "./result/20180925_lossmod/"
+savefile = "./result/20181010_UNET_02/"
 batchsize = 6
 gpu_id = 0
 max_epoch = 300
@@ -50,7 +50,7 @@ valid_iter = iterators.SerialIterator(
 #--------------------
 # Set up network
 #--------------------
-net = myNetwork.UNET()
+net = myNetwork.UNET_02()
 
 if gpu_id >= 0:
     net.to_gpu(gpu_id)
