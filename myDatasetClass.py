@@ -42,6 +42,7 @@ class myImageDataset(chainer.dataset.DatasetMixin):
         return len(self.pairs)
     
     def get_image(self, filenames):
+        print(filenames[0])
         lr_00 = cv2.imread(filenames[0], -1).astype(np.float32).transpose(2,0,1)
         lr_01 = np.array([cv2.imread(filenames[1], -1).astype(np.float32).transpose(0,1)])
         lr_02 = cv2.imread(filenames[2], -1).astype(np.float32).transpose(2,0,1)

@@ -32,7 +32,7 @@ file_list = ["./picture/gochiusa_01/",
 savefile = "./result/20181010_UNET_02/"
 batchsize = 6
 gpu_id = 0
-max_epoch = 300
+max_epoch = 500
 reduce = 3
 
 #--------------------
