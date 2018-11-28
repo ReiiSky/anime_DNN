@@ -28,12 +28,13 @@ from chainer import serializers
 file_list = ["./picture/gochiusa_01/",
              "./picture/hataraku_saibou08/",
              "./picture/planet_with08/",
-             "./picture/revu_star07/"]
-savefile = "./result/20181010_UNET_02/"
-batchsize = 6
+             "./picture/revu_star07/",
+             "./picture/asobi_asobase11/"]
+savefile = "./result/20181018_UNET_02/"
+batchsize = 8
 gpu_id = 0
 max_epoch = 500
-reduce = 3
+reduce = 2
 
 #--------------------
 # Set up dataset
@@ -69,8 +70,8 @@ while train_iter.epoch < max_epoch:
     
     y = net(x)
     
-    #loss = F.mean_squared_error(y, t)
-    loss = myLossfun.l1l2_norm_error(y, t, lam=3)
+    loss = F.mean_squared_error(y, t)
+    #loss = myLossfun.l1l2_norm_error(y, t, lam=3)
     
     net.cleargrads()
     loss.backward()

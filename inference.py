@@ -39,9 +39,9 @@ test = np.array(test)
 #----------------
 # Inference
 #----------------
-model = myNetwork.UNET()
+model = myNetwork.UNET_02()
 
-serializers.load_npz("./result/20180925_lossmod/models/snapshot_270", model)
+serializers.load_npz("./result/20181018_UNET_02/models/snapshot_280", model)
 
 y = model(test)
 y = y.array
